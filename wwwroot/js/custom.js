@@ -27,7 +27,7 @@ $(document).ready(function () {
           e.preventDefault();
           const _ = this;
           setTimeout(() => {
-            $(_).closest(".dropdown-wrapper").removeClass("show");
+            $(_).closest(".dropdown-wrapper , .inner-dropdown").removeClass("show");
             $(".menu-text").html("Close");
           }, 300);
         });
@@ -83,39 +83,44 @@ $(document).ready(function () {
   $(window).resize(function() {
     toggleMenuOverlay();
   });
-  function adjustDropdownHeight() {
-    if ($(window).width() >= 1280) {
-      $(".nav-item.has-dropdown").each(function () {
-        var maxHeight = 0;
-        var dropdowns = $(this).find(".dropdown-wrapper");
-  
-        // Temporarily show all dropdowns to calculate the height correctly
-        dropdowns.each(function () {
-          $(this).css({
-            display: "block",
-            visibility: "hidden",
-          });
-        });
-  
-        // Calculate the maximum height
-        dropdowns.each(function () {
-          var height = $(this).outerHeight();
-          if (height > maxHeight) {
-            maxHeight = height;
-          }
-        });
-  
-        // Set the maximum height and revert the visibility changes
-        dropdowns.each(function () {
-          $(this).css({
-            height: maxHeight + "px",
-            display: "",
-            visibility: ""
-          });
+ function adjustDropdownHeight() {
+  if ($(window).width() >= 1280) {
+    $(".nav-item.has-dropdown").each(function () {
+      var maxHeight = 0;
+      var dropdowns = $(this).find(".dropdown-wrapper");
+
+      // Temporarily show all dropdowns to calculate the height correctly
+      dropdowns.each(function () {
+        $(this).css({
+          display: "block",
+          visibility: "hidden",
         });
       });
-    }
+
+      // Calculate the maximum height
+      dropdowns.each(function () {
+        var height = $(this).outerHeight();
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+
+      // Set the maximum height and revert the visibility changes
+      dropdowns.each(function () {
+        $(this).css({
+          height: maxHeight + "px",
+          display: "",
+          visibility: ""
+        });
+      });
+    });
+  } else {
+    // Reset the height if the screen width is less than 1280 pixels
+    $(".dropdown-wrapper").css({
+      height: "",
+    });
   }
+}
   adjustDropdownHeight();
   $(window).resize(function() {
     adjustDropdownHeight();
