@@ -41,9 +41,30 @@ $(document).ready(function () {
       }
     })
     .resize();
-
-  // Desktop Menu Dropdown Open script start //
-
+    $(document).ready(function () {
+      function toggleNavItem() {
+          if ($(window).width() > 1280) {
+              $(document).on('click', function (event) {
+                  // Check if the click happened outside the .alaska-menu
+                  if (!$(event.target).closest('.alaska-menu').length) {
+                      // Remove 'active' class from all nav links
+                      $(".alaska-menu .nav-item.has-dropdown.active").removeClass("active");
+                      $("#overlay").remove();
+                  }
+              });
+          }
+      }
+  
+      // Initial check
+      toggleNavItem();
+  
+      // Handle window resize
+      $(window).resize(function () {
+          toggleNavItem();
+      });
+  });
+  
+ 
   function toggleMenuOverlay() {
     if ($(window).width() >= 1280) {
       $(".alaska-menu .nav-item.has-dropdown .nav-link").off("click").on("click", function (event) {
