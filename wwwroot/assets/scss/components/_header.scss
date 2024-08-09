@@ -621,6 +621,7 @@
       @include media-breakpoint-down(md) {
         font-size: rem-calc(20);
         margin-left: rem-calc(4);
+        margin-right: rem-calc(16);
       }
     }
     .btn-close-wrap {
