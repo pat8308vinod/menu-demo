@@ -513,6 +513,18 @@
                       @include media-breakpoint-down(xl) {
                         right: rem-calc(40);
                       }
+                      &.inner-dropdown-icon{
+                        
+                        @include media-breakpoint-up(xl) {
+                          &::before{
+                            transition: all 0.4s ease-in-out;
+                            font-family: "Font Awesome 5 Free" !important;
+                            content: "\f067";
+                            color: var(--ae-dark-blue);
+                          }
+                        }
+                        
+                      }
                     }
                     &::after {
                       font-family: "icomoon";
@@ -775,14 +787,14 @@
     overflow: hidden;
     visibility: hidden;
     background: #c0d2e3;
-    transition: max-height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &.show {
     @include media-breakpoint-up(xl) {
       max-height: 500px;
       visibility: visible;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
   }
   a {
@@ -813,14 +825,18 @@
 }
 .inner-dropdown-icon {
   @include media-breakpoint-up(xl) {
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   }
 }
 .active {
   > .inner-dropdown-icon {
+    transition: all 0.4s ease-in-out;
     @include media-breakpoint-up(xl) {
-      transition: transform 0.4s ease-in-out;
-      transform: rotate(90deg);
+      &::before{
+        font-family: "Font Awesome 5 Free" !important;
+        content: "\f068" !important;
+      }
+
     }
   }
 }
