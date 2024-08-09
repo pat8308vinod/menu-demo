@@ -36,7 +36,7 @@ $(document).ready(function () {
         $("nav .btn-close").click(function () {
           $(".alaska-nav").removeClass("open");
           $(".mobile-menu-overlay").remove();
-          $(".dropdown-wrapper").removeClass("show");
+          $(".dropdown-wrapper, .inner-dropdown").removeClass("show");
         });
       }
     })
