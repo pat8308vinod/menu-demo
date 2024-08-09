@@ -1,0 +1,34 @@
+@use "sass:map";
+
+$alaska-colors: (
+  "black": #000000,
+  "white": #ffffff,
+  "ae-light-blue": #2D69A1,
+  "ae-blue": #1F588D,
+  "ae-dark-blue": #303F57,
+  "ae-darker-blue": #1E5385,
+  "ae-teal": #046064,
+  "ae-coral": #FA7C53,
+  "ae-fire": #D24618,
+  "ae-fire-dark": #9E3512,
+  "ae-ochre": #BDA523,
+  "ae-light-green": #CCEDDE,
+  "ae-disabled": #CFD1D2,
+  "ae-dark-grey": #1A263A,
+);
+
+// Rebranding
+$black: map.get($alaska-colors, "black");
+$white: map.get($alaska-colors, "white");
+$ae_light_blue: map.get($alaska-colors, "ae-light-blue");
+$ae_blue: map.get($alaska-colors, "ae-blue");
+$ae_dark_blue: map.get($alaska-colors, "ae-dark-blue");
+$ae_darker_blue: map.get($alaska-colors, "ae-darker-blue");
+$ae_teal: map.get($alaska-colors, "ae-teal");
+$ae_coral: map.get($alaska-colors, "ae-coral");
+$ae_fire: map.get($alaska-colors, "ae-fire");
+$ae_fire_dark: map.get($alaska-colors, "ae-fire-dark");
+$ae_ochre: map.get($alaska-colors, "ae-ochre");
+$ae_light_green: map.get($alaska-colors, "ae-light-green");
+$ae_disabled: map.get($alaska-colors, "ae-disabled");
+$ae_dark_grey: map.get($alaska-colors, "ae-dark-grey");

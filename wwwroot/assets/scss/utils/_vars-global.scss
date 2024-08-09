@@ -1,0 +1,25 @@
+// Helper variables
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$image-base-url: "../images";
+$font-base-url: "../fonts";
+
+// Text weight
+$thin: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extra-bold: 800;
+
+// Text size
+$normal: 1rem;
+$smaller: 0.85rem;
+$larger: 1.15rem;
+$callout: 2.2rem;
+
+// Theme layout
+$header_primary_md: 2;
+$header_secondary_md: 10;
+$header_tertiary_md: 2;
