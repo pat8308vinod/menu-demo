@@ -126,25 +126,25 @@ $(document).ready(function () {
     var parentLink = $(this).parent("a");
   
     // Remove 'show' class from all sibling dropdown-wrapper elements of the clicked item's grandparent
-    parentLink.parent().siblings().find(".dropdown-wrapper").removeClass("show");
+    parentLink.parent().siblings().find(".dropdown-wrapper, .inner-dropdown").removeClass("show");
   
     if (parentLink.hasClass("active")) {
       // If the parent link already has the 'active' class, remove it and hide its dropdown
       parentLink.removeClass("active");
-      parentLink.siblings(".dropdown-wrapper").removeClass("show");
+      parentLink.siblings(".dropdown-wrapper, .inner-dropdown").removeClass("show");
     } else {
       // Remove 'show' class from all other dropdowns at the same level
-      parentLink.closest("ul").find("> li > .dropdown-wrapper").removeClass("show");
+      parentLink.closest("ul").find("> li > .dropdown-wrapper, > li > .inner-dropdown").removeClass("show");
   
       // Remove 'active' class from all sibling a tags and add it to the clicked one
       parentLink.closest("ul").find("a").removeClass("active");
       parentLink.addClass("active");
   
       // Toggle the 'show' class on the clicked dropdown-wrapper element
-      parentLink.siblings(".dropdown-wrapper").toggleClass("show");
+      parentLink.siblings(".dropdown-wrapper , .inner-dropdown").toggleClass("show");
     }
   });
-
+  
   // Desktop Menu Dropdown Open script End //
 
   // Tab Script for move towards left and  script start//
