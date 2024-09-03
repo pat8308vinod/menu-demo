@@ -1,0 +1,103 @@
+$font-base-url: "../assets/fonts";
+
+
+@font-face {
+  font-family: "icomoon";
+  src: url("#{$font-base-url}/icomoon.eot");
+  src: url("#{$font-base-url}/icomoon.eot?#iefix") format("embedded-opentype"),
+    // url("#{$font-base-url}/icomoon.woff2") format("woff2"),
+    url("#{$font-base-url}/icomoon.woff") format("woff"),
+    url("#{$font-base-url}/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e920";
+}
+.icon-checkmark:before {
+  content: "\e919";
+}
+.icon-check-circle:before {
+  content: "\e921";
+}
+.icon-keyboard:before {
+  content: "\e922";
+}
+.icon-district-lookup:before {
+  content: "\e923";
+}
+.icon-address-update:before {
+  content: "\e924";
+}
+.icon-certificate-lookup:before {
+  content: "\e925";
+}
+.icon-money:before {
+  content: "\e926";
+}
+.icon-angle-right:before {
+  content: "\e910";
+}
+.icon-pdf-arrow:before {
+  content: "\e913";
+}
+.icon-user:before {
+  content: "\e912";
+}
+.icon-arrow-right:before {
+  content: "\e900";
+}
+.icon-instagram:before {
+  content: "\e901";
+}
+.icon-calendar:before {
+  content: "\e902";
+}
+.icon-address:before {
+  content: "\e903";
+}
+.icon-phone:before {
+  content: "\e904";
+}
+.icon-fax:before {
+  content: "\e905";
+}
+.icon-email:before {
+  content: "\e906";
+}
+.icon-post-box:before {
+  content: "\e907";
+}
+.icon-certificate:before {
+  content: "\e908";
+}
+.icon-facebook:before {
+  content: "\e909";
+}
+.icon-twitter:before {
+  content: "\e90a";
+}
+.icon-vimeo:before {
+  content: "\e90b";
+}
+.icon-flickr:before {
+  content: "\e90c";
+}
+.icon-article:before {
+  content: "\e90d";
+}
+.icon-arrow-right-solid:before {
+  content: "\e90e";
+}
