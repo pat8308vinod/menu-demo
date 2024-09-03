@@ -4,6 +4,7 @@ $(document).ready(function () {
   // Mobile menu
   $(".navbar-toggler").click(function () {
     $(".alaska-nav").toggleClass("open");
+    $(".dropdown-wrapper, .inner-sub-menu, .sub-menu").removeClass("show");
     $("body")
       .append('<div class="mobile-menu-overlay"></div>')
       .find(".mobile-menu-overlay")
@@ -38,7 +39,7 @@ $(document).ready(function () {
         $("nav .btn-close").click(function () {
           $(".alaska-nav").removeClass("open");
           $(".mobile-menu-overlay").remove();
-          $(".dropdown-wrapper, .inner-dropdown").removeClass("show");
+          $(".dropdown-wrapper, .inner-sub-menu, .sub-menu").removeClass("show");
         });
       }
     })

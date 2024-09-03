@@ -46,6 +46,7 @@
   background: var(--ae-dark-blue);
   z-index: 4;
   position: relative;
+
   .navbar {
     > .container {
       display: flex;
@@ -126,6 +127,9 @@
   z-index: 99999;
   position: sticky;
   top: 0;
+  @include media-breakpoint-down(xl){
+    background: var(--ae-dark-blue);
+  }
   nav.alaska-navbar {
     @include media-breakpoint-up(xl) {
       padding: 0;
@@ -210,7 +214,6 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: rem-calc(16);
         overflow-y: auto;
         height: 100vh;
       }
@@ -220,7 +223,7 @@
         width: rem-calc(328);
         top: 100%;
         bottom: 0;
-        background: var(--white);
+        background: #215382;
         overflow-x: hidden;
         transition: all 0.3s ease-in-out;
         z-index: 99;
@@ -249,7 +252,7 @@
           position: relative;
           flex-direction: column;
           align-items: flex-start;
-          padding-top: rem-calc(25);
+          padding-top: rem-calc(8);
           padding-left: rem-calc(20);
           padding-right: rem-calc(20);
           gap: rem-calc(0);
@@ -306,9 +309,11 @@
                 }
               }
               @include media-breakpoint-down(xl) {
-                color: var(--ae-dark-blue);
+                font-size: rem-calc(14);
+                font-family: var(--Helvitica-Neue-Medium);
+                color: var(--white);
                 padding: rem-calc(16 16 20 0);
-                border-bottom: 1px solid var(--ae-dark-blue);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.13);
                 position: relative;
                 width: 100%;
                 display: flex;
@@ -414,7 +419,7 @@
               overflow-y: scroll;
               padding: rem-calc(24);
               height: 100vh;
-              background: var(--white);
+              background: #215382;
               right: -20.5rem;
               display: block;
               right: rem-calc(-328);
@@ -422,7 +427,7 @@
               overflow-x: hidden;
               &.show {
                 display: block;
-                right: rem-calc(-8);
+                right: 0;
                 transition: all 0.3s ease-in;
               }
             }
@@ -438,11 +443,9 @@
             .btn-back {
               font-size: rem-calc(14);
               line-height: rem-calc(22);
-              color: var(--black);
-              margin-bottom: rem-calc(16);
+              color: var(--white);
               padding: 0;
               background: transparent;
-              color: var(--ae-dark-blue);
               display: flex;
               align-items: center;
               @include media-breakpoint-up(xl) {
@@ -453,7 +456,7 @@
                 margin-right: rem-calc(4);
                 margin-top: rem-calc(-1);
                 transform: rotate(180deg);
-                color: var(--ae-dark-blue);
+               
               }
             }
             .sub-menu {
@@ -464,7 +467,7 @@
                 overflow-y: scroll;
                 padding: rem-calc(24);
                 height: 100vh;
-                background: var(--white);
+                background: #215382;
                 right: -20.5rem;
                 display: block;
                 right: rem-calc(-328);
@@ -473,6 +476,22 @@
                 &.show {
                   display: block;
                   right: rem-calc(-8);
+                  transition: all 0.3s ease-in;
+                }
+              }
+              @include media-breakpoint-down(md) {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                overflow-y: scroll;
+                padding: rem-calc(24);
+                height: 100vh;
+                background: #215382;
+                right: -100%;
+                transition: all 0.3s ease-in;
+                overflow-x: hidden;
+                &.show {
+                  display: block;
                   transition: all 0.3s ease-in;
                 }
               }
@@ -512,8 +531,16 @@
                   text-decoration: none;
                   display: inline-block;
                   width: 100%;
+                  @include media-breakpoint-down(xl) {
+                    color: var(--white);
+                    
+                  }
                   &:hover {
                     color: var(--ae-darker-blue);
+                    @include media-breakpoint-down(xl) {
+                      color: var(--white);
+                      
+                    }
                   }
                   &:hover,
                   &.active {
@@ -626,6 +653,12 @@
               width: 100%;
               padding-bottom: rem-calc(10);
               border-bottom: 1px solid rgba(82, 87, 96, 0.31);
+              @include media-breakpoint-down(xl) {
+                color: var(--white);
+                font-weight: 500;
+                border-color: rgba(255, 255, 255, 0.13);
+                padding: rem-calc(10);
+              }
             }
             .has-sub-link {
               display: flex;
@@ -676,7 +709,7 @@
                 overflow-y: scroll;
                 padding: rem-calc(24);
                 height: 100vh;
-                background: var(--white);
+                background: #215382;
                 right: -20.5rem;
                 display: block;
                 right: rem-calc(-328);
@@ -687,6 +720,10 @@
                   right: rem-calc(-8);
                   transition: all 0.3s ease-in;
                 }
+              }
+              @include media-breakpoint-down(md) {
+                width: 100%;
+                right: -100%;
               }
             }
             .row {
