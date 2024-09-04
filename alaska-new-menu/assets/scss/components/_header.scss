@@ -312,7 +312,7 @@
                 font-size: rem-calc(14);
                 font-family: var(--Helvitica-Neue-Medium);
                 color: var(--white);
-                padding: rem-calc(16 16 20 0);
+                padding: rem-calc(18 0 16 0);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.13);
                 position: relative;
                 width: 100%;
@@ -475,8 +475,17 @@
                 overflow-x: hidden;
                 &.show {
                   display: block;
-                  right: rem-calc(-8);
+                  right: 0;
                   transition: all 0.3s ease-in;
+                }
+                li{
+                  a{
+                    border-bottom: 1px solid rgba(255, 255, 255, .13);
+                    padding: rem-calc(18 0 18 0);
+                  }
+                }
+                .btn-back{
+                  margin-bottom: rem-calc(8);
                 }
               }
               @include media-breakpoint-down(md) {
@@ -517,6 +526,9 @@
             }
             > .row {
               padding-top: rem-calc(24);
+              @include media-breakpoint-down(xl) {
+                padding-top: rem-calc(8);
+              }
             }
 
             ul {
@@ -656,8 +668,10 @@
               @include media-breakpoint-down(xl) {
                 color: var(--white);
                 font-weight: 500;
+                font-size: rem-calc(14);
                 border-color: rgba(255, 255, 255, 0.13);
-                padding: rem-calc(10);
+                padding: rem-calc(18 0 20 0);
+                
               }
             }
             .has-sub-link {
@@ -682,6 +696,8 @@
                 }
                 @include media-breakpoint-down(xl){
                   justify-content: space-between;
+                  font-weight: 500;
+                  font-size: rem-calc(14);
                 }
               }
               .icon-angle-right {
@@ -717,7 +733,7 @@
                 overflow-x: hidden;
                 &.show {
                   display: block;
-                  right: rem-calc(-8);
+                  right: 0;
                   transition: all 0.3s ease-in;
                 }
               }
