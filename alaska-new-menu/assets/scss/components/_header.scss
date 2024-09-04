@@ -5,7 +5,7 @@
   z-index: 4;
   position: relative;
   @include media-breakpoint-down(md) {
-    padding: rem-calc(15 5 12 5);
+    padding: rem-calc(10 5 12 5);
   }
   .row {
     @include media-breakpoint-down(md) {
@@ -13,7 +13,7 @@
     }
     img{
       @include media-breakpoint-down(md) {
-       max-width: rem-calc(92);
+       max-width: rem-calc(72);
       }
     }
   }
@@ -39,12 +39,15 @@
           @include media-breakpoint-down(md) {
             font-size: rem-calc(12);
           }
+          @media (max-width: 400px) {
+            font-size: rem-calc(11);
+        }
         }
       }
       @include media-breakpoint-down(md) {
         justify-content: flex-start;
         gap:rem-calc(8);
-        padding-left:rem-calc(8);
+        padding-left:rem-calc(24);
       }
     }
   }
