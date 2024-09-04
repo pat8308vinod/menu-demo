@@ -11,6 +11,11 @@
     @include media-breakpoint-down(md) {
       row-gap: rem-calc(4);
     }
+    img{
+      @include media-breakpoint-down(md) {
+       max-width: rem-calc(92);
+      }
+    }
   }
   .parent-nav {
     ul {
@@ -38,6 +43,8 @@
       }
       @include media-breakpoint-down(md) {
         justify-content: flex-start;
+        gap:rem-calc(8);
+        padding-left:rem-calc(8);
       }
     }
   }
@@ -46,7 +53,7 @@
   background: var(--ae-dark-blue);
   z-index: 4;
   position: relative;
-
+  padding: rem-calc(12 0);
   .navbar {
     > .container {
       display: flex;
@@ -114,6 +121,8 @@
       }
       span {
         display: flex;
+        font-size: rem-calc(32);
+        line-height: 1;
       }
     }
   }
@@ -211,30 +220,36 @@
     .alaska-nav.navbar-collapse {
       flex-basis: 0;
       @include media-breakpoint-down(xl) {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        overflow-y: auto;
-        height: 100vh;
-      }
-      @include media-breakpoint-down(xl) {
         position: absolute;
-        right: rem-calc(-328);
+        height: 100vh;
+        right: rem-calc(-328); // Start off-screen to the right
         width: rem-calc(328);
+        max-width: 0;
         top: 100%;
         bottom: 0;
         background: #215382;
         overflow-x: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: right 0.3s ease-in-out, max-width 0.3s ease-in-out; // Transition for 'right' and 'max-width'
         z-index: 99;
+    
         &.open {
-          right: 0;
+            right: 0; // Move into view
+            max-width: 100%;
         }
-      }
-      @include media-breakpoint-down(md) {
+    }
+    
+    @include media-breakpoint-down(md) {
         width: 100%;
-        right: -100%;
-      }
+        right: -100%; // Position off-screen for smaller screens
+        max-width: 0;
+        transition: right 0.3s ease-in-out, max-width 0.3s ease-in-out; // Transition for 'right' and 'max-width'
+    
+        &.open {
+            right: 0; // Align to the right edge when opened
+            max-width: 100%;
+        }
+    }
+    
       &.collapse:not(.show) {
         display: block;
       }

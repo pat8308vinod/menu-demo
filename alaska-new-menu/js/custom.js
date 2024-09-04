@@ -99,15 +99,15 @@ $(document).ready(function () {
         });
       } else {
         // Remove active class and overlay if window is resized to less than 1280px
-        $(".alaska-menu .nav-item.has-dropdown .nav-link .icon-angle-right").on("click", function (e) {
-          e.preventDefault();
-          $(this).closest(".nav-item").toggleClass("open");
-          $(this).parent().siblings(".dropdown-wrapper").toggleClass("show");
-        });
-    
         $("#overlay").remove();
         $(".dropdown-wrapper").removeClass("show");
         $(".alaska-menu .nav-item.has-dropdown.active").removeClass("active");
+        $(".alaska-menu .nav-item.has-dropdown .nav-link .icon-angle-right").on("click", function (e) {
+          e.preventDefault();
+          $(this).parent().siblings(".dropdown-wrapper").addClass("show");
+        });
+    
+        
       }
     }
     
