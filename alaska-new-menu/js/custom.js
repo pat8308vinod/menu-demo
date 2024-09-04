@@ -3,6 +3,7 @@ var ex = new EX({ offset: 200 }).init();
 $(document).ready(function () {
   // Mobile menu
   $(".navbar-toggler").click(function () {
+    $(this).toggleClass('show');
     $(".alaska-nav").toggleClass("open");
     $(".dropdown-wrapper, .inner-sub-menu, .sub-menu").removeClass("show");
     $("body")

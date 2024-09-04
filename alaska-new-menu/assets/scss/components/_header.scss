@@ -207,6 +207,13 @@
         &:focus {
           box-shadow: none;
         }
+        &.show{
+          .navbar-toggler-icon {
+            background-image: url('../assets/images/close.png') !important;
+            filter: invert(0);
+          }
+         
+        }
       }
       @include media-breakpoint-down(md) {
         padding: 0;
@@ -428,6 +435,7 @@
             width: 100%;
             max-height: 95vh;
             overflow: auto;
+            scrollbar-width: none;  
             @include media-breakpoint-down(xl) {
               width: rem-calc(332);
               top: 0;
@@ -534,6 +542,9 @@
                   font-size: rem-calc(28);
                   font-weight: 400;
                 }
+              }
+              &:hover{
+                color: var(--ae-blue);
               }
               @include media-breakpoint-down(xl) {
                 display: none;
@@ -692,7 +703,7 @@
             .has-sub-link {
               display: flex;
               justify-content: space-between;
-              .icon-arrow-right {
+              .icon-angle-right {
                 @include media-breakpoint-up(xl) {
                   display: none;
                 }
@@ -858,8 +869,9 @@
 
 .btn-close {
   filter: invert(1);
-  font-size: rem-calc(16);
+  font-size: rem-calc(11);
   opacity: 1;
+  margin-right: rem-calc(20);
 }
 
 #overlay {
