@@ -11,9 +11,9 @@
     @include media-breakpoint-down(md) {
       row-gap: rem-calc(4);
     }
-    img{
+    img {
       @include media-breakpoint-down(md) {
-       max-width: rem-calc(72);
+        max-width: rem-calc(72);
       }
     }
   }
@@ -41,13 +41,13 @@
           }
           @media (max-width: 400px) {
             font-size: rem-calc(11);
-        }
+          }
         }
       }
       @include media-breakpoint-down(md) {
         justify-content: flex-start;
-        gap:rem-calc(8);
-        padding-left:rem-calc(24);
+        gap: rem-calc(8);
+        padding-left: rem-calc(24);
       }
     }
   }
@@ -139,8 +139,9 @@
   z-index: 99999;
   position: sticky;
   top: 0;
-  @include media-breakpoint-down(xl){
+  @include media-breakpoint-down(xl) {
     background: var(--ae-dark-blue);
+    
   }
   nav.alaska-navbar {
     @include media-breakpoint-up(xl) {
@@ -148,6 +149,7 @@
     }
     @include media-breakpoint-down(xl) {
       position: relative;
+      padding-bottom: rem-calc(6);
     }
     .navbar-brand {
       display: none;
@@ -210,12 +212,11 @@
         &:focus {
           box-shadow: none;
         }
-        &.show{
+        &.show {
           .navbar-toggler-icon {
-            background-image: url('../assets/images/close.png') !important;
+            background-image: url("../assets/images/close.png") !important;
             filter: invert(0);
           }
-         
         }
       }
       @include media-breakpoint-down(md) {
@@ -232,8 +233,8 @@
       @include media-breakpoint-down(xl) {
         position: absolute;
         height: 100vh;
-        right: rem-calc(-328); // Start off-screen to the right
-        width: rem-calc(328);
+        right: -50%; // Start off-screen to the right
+        width: 50%;
         max-width: 0;
         top: 100%;
         bottom: 0;
@@ -241,25 +242,18 @@
         overflow-x: hidden;
         transition: right 0.3s ease-in-out, max-width 0.3s ease-in-out; // Transition for 'right' and 'max-width'
         z-index: 99;
-    
+
         &.open {
-            right: 0; // Move into view
-            max-width: 100%;
+          right: 0; // Move into view
+          max-width: 100%;
         }
-    }
-    
-    @include media-breakpoint-down(md) {
+      }
+
+      @include media-breakpoint-down(md) {
         width: 100%;
         right: -100%; // Position off-screen for smaller screens
-        max-width: 0;
-        transition: right 0.3s ease-in-out, max-width 0.3s ease-in-out; // Transition for 'right' and 'max-width'
-    
-        &.open {
-            right: 0; // Align to the right edge when opened
-            max-width: 100%;
-        }
-    }
-    
+      }
+
       &.collapse:not(.show) {
         display: block;
       }
@@ -281,11 +275,11 @@
           padding-left: rem-calc(20);
           padding-right: rem-calc(20);
           gap: rem-calc(0);
-          width: rem-calc(328);
+          width: 100%;
           transition: all 0.3s ease-in-out;
           padding-bottom: rem-calc(16);
           &.open {
-            margin-left: rem-calc(-328);
+            margin-left: -50%;
           }
         }
         @include media-breakpoint-down(md) {
@@ -344,10 +338,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                
               }
-              .icon-angle-right{
-                @include media-breakpoint-up(xl){
+              .icon-angle-right {
+                @include media-breakpoint-up(xl) {
                   display: none;
                 }
               }
@@ -438,17 +431,16 @@
             width: 100%;
             max-height: 95vh;
             overflow: auto;
-            scrollbar-width: none;  
+            scrollbar-width: none;
             @include media-breakpoint-down(xl) {
-              width: rem-calc(332);
+              width: 100%;
               top: 0;
               overflow-y: scroll;
               padding: rem-calc(24);
               height: 100vh;
-              background: #215382;
-              right: -20.5rem;
+              background: var(--white);
               display: block;
-              right: rem-calc(-328);
+              right: -100%;
               transition: all 0.3s ease-in;
               overflow-x: hidden;
               &.show {
@@ -467,36 +459,41 @@
             }
 
             .btn-back {
-              font-size: rem-calc(14);
+              font-size: rem-calc(16);
               line-height: rem-calc(22);
               color: var(--white);
               padding: 0;
               background: transparent;
               display: flex;
               align-items: center;
+              position: absolute;
+              left: 0;
+              width: 100%;
+              top:0;
+              padding: rem-calc(12 16);
+              background: var(--ae-dark-blue);
+              border-top: 1px solid rgba(255,255,255,.13);
               @include media-breakpoint-up(xl) {
                 display: none;
               }
-              .icon-arrow-right {
+              .icon-angle-right {
                 font-size: rem-calc(20);
                 margin-right: rem-calc(4);
                 margin-top: rem-calc(-1);
                 transform: rotate(180deg);
-               
               }
             }
             .sub-menu {
               @include media-breakpoint-down(xl) {
                 position: absolute;
-                width: rem-calc(332);
+                width: 100%;
                 top: 0;
                 overflow-y: scroll;
                 padding: rem-calc(24);
                 height: 100vh;
-                background: #215382;
-                right: -20.5rem;
+                background: var(--white);
+                right: -100%;
                 display: block;
-                right: rem-calc(-328);
                 transition: all 0.3s ease-in;
                 overflow-x: hidden;
                 &.show {
@@ -504,32 +501,32 @@
                   right: 0;
                   transition: all 0.3s ease-in;
                 }
-                li{
-                  a{
-                    border-bottom: 1px solid rgba(255, 255, 255, .13);
+                @include media-breakpoint-down(md) {
+                  width: 100%;
+                  right: -100%;
+                }
+                li {
+                  a {
+                    border-bottom: 1px solid rgba(82, 87, 96, 0.31);
                     padding: rem-calc(18 0 18 0);
                   }
                 }
-                .btn-back{
+                .btn-back {
                   margin-bottom: rem-calc(8);
                 }
-              }
-              @include media-breakpoint-down(md) {
-                position: absolute;
-                width: 100%;
-                top: 0;
-                overflow-y: scroll;
-                padding: rem-calc(24);
-                height: 100vh;
-                background: #215382;
-                right: -100%;
-                transition: all 0.3s ease-in;
-                overflow-x: hidden;
-                &.show {
-                  display: block;
-                  transition: all 0.3s ease-in;
+                .sub-link{
+                  @include media-breakpoint-up(xl){
+                    display: none;
+                  }
+                  border-bottom: none;
+                  color: #215382;
+                  font-weight: 400;
+                  font-size: rem-calc(14);
+                  padding-bottom: rem-calc(12);
+                  margin-top: rem-calc(20);
                 }
               }
+              
             }
             .menu-link {
               color: var(--black);
@@ -539,18 +536,26 @@
               align-items: center;
               gap: rem-calc(10);
               text-transform: capitalize;
-              .icon-arrow-right{
+              .icon-arrow-right {
                 margin-top: rem-calc(2);
-                &::before{
+                &::before {
                   font-size: rem-calc(28);
                   font-weight: 400;
                 }
               }
-              &:hover{
+              &:hover {
                 color: var(--ae-blue);
               }
               @include media-breakpoint-down(xl) {
-                display: none;
+                color: #215382;
+                font-size: rem-calc(14);
+                text-transform: uppercase;
+                font-weight: 400;
+                margin-top: rem-calc(40);
+                letter-spacing: 0.5px;
+                .icon-arrow-right {
+                  display: none;
+                }
               }
             }
             > .row {
@@ -573,15 +578,12 @@
                   display: inline-block;
                   width: 100%;
                   @include media-breakpoint-down(xl) {
-                    color: var(--white);
-                    
+                    color: var(--black);
+                    font-weight: 500;
+                    font-size: rem-calc(16);
                   }
                   &:hover {
                     color: var(--ae-darker-blue);
-                    @include media-breakpoint-down(xl) {
-                      color: var(--white);
-                      
-                    }
                   }
                   &:hover,
                   &.active {
@@ -690,16 +692,22 @@
             .sub-link {
               color: var(--ae-light-blue);
               text-decoration: none;
-              display: block;
+              display: none;
               width: 100%;
               padding-bottom: rem-calc(10);
               border-bottom: 1px solid rgba(82, 87, 96, 0.31);
               @include media-breakpoint-down(xl) {
-                color: var(--white);
+                color: var(--black);
                 font-weight: 500;
-                font-size: rem-calc(14);
-                border-color: rgba(255, 255, 255, 0.13);
+                font-size: rem-calc(16);
+                border-color: rgba(26, 30, 53, 0.13);
                 padding: rem-calc(18 0 20 0);
+                display: block;
+                &.active,
+                &:hover {
+                  color: #215382;
+                  border-color: rgba(26, 30, 53, 0.13);
+                }
                 
               }
             }
@@ -723,14 +731,14 @@
                     color: var(--ae-blue) !important;
                   }
                 }
-                @include media-breakpoint-down(xl){
+                @include media-breakpoint-down(xl) {
                   justify-content: space-between;
                   font-weight: 500;
-                  font-size: rem-calc(14);
+                  font-size: rem-calc(16);
                 }
               }
               .icon-angle-right {
-                @include media-breakpoint-up(xl){
+                @include media-breakpoint-up(xl) {
                   transform: rotate(90deg);
                   transition: all 0.3s ease-in-out;
                   &::before {
@@ -741,23 +749,29 @@
                     color: var(--ae-blue) !important;
                   }
                 }
-                
               }
             }
             .inner-sub-menu {
               display: none;
               padding: 0;
+              .sub-link{
+                @include media-breakpoint-up(xl){
+                  display: none;
+                }
+                border-bottom: none;
+                color: #215382;
+                font-weight: 400;
+              }
               @include media-breakpoint-down(xl) {
                 position: absolute;
-                width: rem-calc(332);
+                width: 100%;
                 top: 0;
                 overflow-y: scroll;
                 padding: rem-calc(24);
                 height: 100vh;
-                background: #215382;
-                right: -20.5rem;
+                background: var(--white);
+                right: -100%;
                 display: block;
-                right: rem-calc(-328);
                 transition: all 0.3s ease-in;
                 overflow-x: hidden;
                 &.show {

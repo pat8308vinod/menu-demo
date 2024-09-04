@@ -105,6 +105,7 @@ $(document).ready(function () {
         $(".alaska-menu .nav-item.has-dropdown.active").removeClass("active");
         $(".alaska-menu .nav-item.has-dropdown .nav-link .icon-angle-right").on("click", function (e) {
           e.preventDefault();
+          $('.navbar-brand').addClass('hide');
           $(this).parent().siblings(".dropdown-wrapper").addClass("show");
         });
     
@@ -157,7 +158,6 @@ function handleSubMenuToggle() {
       // Handle submenu toggle for smaller screens
       $(".has-submenu .icon-angle-right").off("click").on("click", function(e) {
           e.preventDefault();
-
           var $submenu = $(this).closest("a").next(".inner-sub-menu");
 
           // Toggle the 'show' class on the associated submenu
