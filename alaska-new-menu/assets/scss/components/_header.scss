@@ -141,7 +141,6 @@
   top: 0;
   @include media-breakpoint-down(xl) {
     background: var(--ae-dark-blue);
-    
   }
   nav.alaska-navbar {
     @include media-breakpoint-up(xl) {
@@ -226,6 +225,7 @@
         width: rem-calc(20);
         height: rem-calc(20);
         filter: invert(1);
+        transition: all 0.4s ease-in-out;
       }
     }
     .alaska-nav.navbar-collapse {
@@ -233,25 +233,27 @@
       @include media-breakpoint-down(xl) {
         position: absolute;
         height: 100vh;
-        right: -50%; // Start off-screen to the right
-        width: 50%;
-        max-width: 0;
+        right: -50%; /* Start off-screen to the right */
+        width: 0; /* Start with a width of 0 */
         top: 100%;
         bottom: 0;
         background: #215382;
         overflow-x: hidden;
-        transition: right 0.3s ease-in-out, max-width 0.3s ease-in-out; // Transition for 'right' and 'max-width'
+        transition: right 0.55s ease-in-out, width 0.55s ease-in-out; /* Transition for 'right' and 'width' */
         z-index: 99;
-
+      
         &.open {
-          right: 0; // Move into view
-          max-width: 100%;
+          right: 0; /* Move into view */
+          width: 50%; /* Expand to 50% width */
         }
       }
 
       @include media-breakpoint-down(md) {
-        width: 100%;
         right: -100%; // Position off-screen for smaller screens
+        &.open {
+          right: 0; /* Move into view */
+          width: 100%; /* Expand to 50% width */
+        }
       }
 
       &.collapse:not(.show) {
