@@ -207,24 +207,22 @@
               }
               @include media-breakpoint-down(xl) {
                 color: var(--ae-dark-blue);
-                padding: rem-calc(16 80 20 0);
+                padding: rem-calc(10 8 14 8);
                 border-bottom: 1px solid var(--ae-dark-blue);
                 position: relative;
                 width: 100%;
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
                 .icon-arrow-right {
-                  font-weight: bold;
-                  position: absolute;
-                  background: var(--ae-dark-blue);
-                  color: var(--white);
+                  color: var(--black);
                   right: rem-calc(16);
-                  width: rem-calc(35);
-                  height: rem-calc(35);
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  border-radius: 50%;
+                  &::before{
+                    font-size: rem-calc(20);
+                  }
                 }
               }
             }
@@ -235,7 +233,7 @@
               display: block;
               transition: all 0.6s ease-in-out;
               > ul{
-                animation: slideUp 0.4s forwards;
+                animation: slideUp 0.2s forwards;
               }
             }
             .nav-link {
@@ -301,12 +299,14 @@
             top: 100%;
             z-index: 9999;
             background: var(--white);
-            padding: rem-calc(24 14 36 14);
+            padding: rem-calc(24 0 44 0);
             display: none;
             width: 97.5%;
             max-height: none; /* Remove any max-height constraints */
             overflow: visible;
             transition: all 0.3s ease-in-out;
+            overflow-x: hidden;
+            scrollbar-width: none;
             @include media-breakpoint-down(xl) {
               width: rem-calc(328);
               top: rem-calc(0);
@@ -364,7 +364,7 @@
                 a {
                   font-family: var(--helvetica-neue-medium);
                   font-weight: 500;
-                  padding: rem-calc(16 16 16 0);
+                  padding: rem-calc(10 12 14 8);
                   border-bottom: 1px solid rgb(48 63 87 / 20%);
                   color: var(--ae-dark-blue);
                   font-size: rem-calc(16);
@@ -380,29 +380,27 @@
                     color: var(--ae-darker-blue);
                     border-color: var(--ae-darker-blue);
                     .icon-arrow-right {
-                      background: var(--ae-darker-blue);
+                      color: var(--ae-darker-blue);
                     }
                   }
                   @include media-breakpoint-up(xl) {
-                    padding: rem-calc(16 16);
+                    padding: rem-calc(14 12);
                     position: relative;
                     display: flex;
                     align-items: center;
                   }
                   .icon-arrow-right {
-                    font-weight: bold;
+                  
                     right: rem-calc(16);
-                    opacity: 1;
-                    background: var(--ae-dark-blue);
-                    color: var(--white);
-                    width: rem-calc(35);
-                    height: rem-calc(35);
+                    color: var(--black);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 50%;
                     &:hover {
-                      background: var(--ae-darker-blue);
+                      color: var(--ae-darker-blue);
+                    }
+                    &::before{
+                      font-size: rem-calc(20);
                     }
                   }
                 }
@@ -435,6 +433,21 @@
                       opacity: 1;
                       animation: rightToLeft 0.3s ease-in forwards; // Apply bottom-to-top animation
                     }
+                    li{
+                      a{
+                        padding: rem-calc(14 12);
+                      }
+                      &.has-submenu{
+                        a{
+                          padding: rem-calc(11 12);
+                        }
+                        .sub-menu{
+                          a{
+                            padding: rem-calc(14 12);
+                          }
+                        }
+                      }
+                    }
                   }
                   @include media-breakpoint-down(xl) {
                     height: 100%;
@@ -445,14 +458,38 @@
                       left: 0;
                       transition: all 0.3s ease-in-out;
                     }
+                    li{
+                      a{
+                        padding: rem-calc(14 12);
+                      }
+                      &.has-submenu{
+                        a{
+                          padding: rem-calc(10);
+                        }
+                        .sub-menu{
+                          a{
+                            padding: rem-calc(14 12);
+                          }
+                        }
+                      }
+                    }
                   }
                 }
-                
+                &.has-submenu{
+                  a{
+                    padding: rem-calc(8 12 8 8);
+                    @include media-breakpoint-up(xl) {
+                      padding: rem-calc(11 12);
+                    }
+                  }
+                }
+              
               }
+
               @include media-breakpoint-up(xl) {
-                width: 33%;
+                width: 33.33%;
                 position: relative;
-                padding: rem-calc(0 32);
+                padding: rem-calc(0 24);
               }
             }
             .row {
@@ -640,24 +677,24 @@
 }
 @keyframes slideUp {
   0% {
-    opacity: 0;
+
     transform: translateY(50%);
   }
   100% {
-    opacity: 1;
+  
     transform: translateY(0);
   }
 }
 
 @keyframes slideDown {
   0% {
-    transform: translateY(-2px);
+ 
     opacity: 0;
     
   }
   
   100% {
-    transform: translateY(0);
+  
     opacity: 1;
   }
 }

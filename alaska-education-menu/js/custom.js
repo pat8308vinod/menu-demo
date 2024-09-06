@@ -91,13 +91,13 @@ $(document).ready(function () {
             if ($(".alaska-menu .nav-item.has-dropdown.active").length === 0) {
               $("#overlay").remove();
               $(".dropdown-wrapper").removeClass("show");
-      
-              $(".navbar-nav .nav-item .dropdown-wrapper ul li a").removeClass("active");
+              
             }
           } else {
             // Remove 'active' class from all other items
             $(".sub-menu").removeClass("show");
             $(".dropdown-wrapper").removeClass("show").css("height", "auto");
+            $(".has-submenu a").removeClass("active");
             $(this)
               .closest(".alaska-menu")
               .find(".nav-item.has-dropdown.active")
@@ -155,6 +155,7 @@ $(document).ready(function () {
     // Also remove .show and .active from any descendants of the current .has-submenu
     $parentItem.find(".sub-menu").removeClass("show");
     $parentItem.find(".has-submenu").removeClass("active");
+    $parentItem.children("a").removeClass("active");
     $parentItem.siblings().find(".sub-menu").siblings().removeClass("active");
   
     // Toggle .show class on the current .sub-menu
