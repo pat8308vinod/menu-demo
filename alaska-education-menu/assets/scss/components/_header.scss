@@ -233,7 +233,10 @@
           &.active {
             .dropdown-wrapper {
               display: block;
-              transition: all 0.3s ease-in-out;
+              transition: all 0.6s ease-in-out;
+              > ul{
+                animation: slideUp 0.4s forwards;
+              }
             }
             .nav-link {
               @include media-breakpoint-up(xl) {
@@ -324,7 +327,7 @@
             @include media-breakpoint-up(xl) {
               box-shadow: 0px 14px 44px 0px rgba(0, 0, 0, 0.25);
               left: 1.25%;
-              animation: .3s ease-in 0s 1 normal none running fadeIn;
+              animation: .4s ease-in 0s 1 normal none running slideDown;
             }
             @include media-breakpoint-down(xl) {
              overflow-x: hidden;
@@ -351,7 +354,9 @@
                 color: var(--ae-dark-blue);
               }
             }
-
+           > ul {
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+           }
             ul {
               padding-left: 0;
               list-style-type: none;
@@ -369,7 +374,7 @@
                   width: 100%;
                   &:hover {
                     color: var(--ae-darker-blue);
-                    border-color: var(--ae-darker-blue);
+                    //border-color: var(--ae-darker-blue);
                   }
                   &.active {
                     color: var(--ae-darker-blue);
@@ -401,16 +406,18 @@
                     }
                   }
                 }
-                @keyframes bottomToTop {
+                @keyframes rightToLeft {
                   from {
                     opacity: 0;
-                    transform: translateY(20%); // Moves the sub-menu up from below
+                    transform: translateX(20%); // Moves the sub-menu up from below
                   }
                   to {
                     opacity: 1;
-                    transform: translateY(0); // Moves the sub-menu back to its original position
+                    transform: translateX(0); // Moves the sub-menu back to its original position
                   }
                 }
+                
+                
                 
                 .sub-menu {
                   position: absolute;
@@ -426,7 +433,7 @@
                     &.show {
                       display: block;
                       opacity: 1;
-                      animation: bottomToTop 0.3s ease-in forwards; // Apply bottom-to-top animation
+                      animation: rightToLeft 0.3s ease-in forwards; // Apply bottom-to-top animation
                     }
                   }
                   @include media-breakpoint-down(xl) {
@@ -631,3 +638,27 @@
     display: none;
   }
 }
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-2px);
+    opacity: 0;
+    
+  }
+  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

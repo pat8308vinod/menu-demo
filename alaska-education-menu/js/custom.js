@@ -91,11 +91,13 @@ $(document).ready(function () {
             if ($(".alaska-menu .nav-item.has-dropdown.active").length === 0) {
               $("#overlay").remove();
               $(".dropdown-wrapper").removeClass("show");
-              $(".dropdown-wrapper .has-submenu .sub-menu").removeClass("show");
+      
+              $(".navbar-nav .nav-item .dropdown-wrapper ul li a").removeClass("active");
             }
           } else {
             // Remove 'active' class from all other items
-            $(".dropdown-wrapper").removeClass("show");
+            $(".sub-menu").removeClass("show");
+            $(".dropdown-wrapper").removeClass("show").css("height", "auto");
             $(this)
               .closest(".alaska-menu")
               .find(".nav-item.has-dropdown.active")
@@ -110,6 +112,7 @@ $(document).ready(function () {
       $("#overlay").remove();
       $(".dropdown-wrapper").removeClass("show");
       $(".alaska-menu .nav-item.has-dropdown.active").removeClass("active");
+      
       
     }
   }
