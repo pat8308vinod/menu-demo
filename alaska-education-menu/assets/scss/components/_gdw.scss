@@ -1,0 +1,18 @@
+.gdw_story {
+    margin-bottom: rem-calc(18) !important;
+}
+
+.gdw_story_title {
+    @extend .h5;
+}
+
+.gdw_menu {
+    li {
+        padding-left: 0 !important;
+        opacity: .8;
+
+        &::after {
+            content: none !important;
+        }
+    }
+}

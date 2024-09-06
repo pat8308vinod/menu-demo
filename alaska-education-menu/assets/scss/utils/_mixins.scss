@@ -1,0 +1,104 @@
+// Define Font Awesome defaults when specifying pseudo-element content
+@mixin fontAwesome($icon) {
+  content: $icon;
+  font-family: "FontAwesome";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+}
+
+// Cross browser display: flex
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// Cross-browser box flex: $values
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+// Cross-browser flexbox order: $values
+@mixin flex-order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  order: $val;
+}
+
+// Cross-browser flexbox order: $values
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// Consistent styles for listing content
+@mixin content-list {
+  padding: 2rem 0;
+  border-bottom: 1px solid $jcfs_gray-med;
+  &:last-child {
+    border-bottom-width: 0;
+  }
+}
+
+// Consistent tags styling
+@mixin tags {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 4px;
+  background: #eaeaea;
+}
+
+// Turn the search button into an icon
+@mixin search-button-icon($background: $link-color, $hover: $link-hover-color) {
+  .form-actions {
+    background: $background;
+
+    &:hover {
+      background: $hover;
+    }
+
+    .form-submit {
+      width: 0;
+      overflow: hidden;
+      text-indent: -999em;
+      position: relative;
+      background: transparent;
+      border-width: 0;
+      max-height: 1.25rem;
+      margin-top: -2px;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    &::before {
+      @include fontAwesome($search);
+      position: absolute;
+      line-height: 1.25rem;
+      width: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+// Create mixin for line clamp
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

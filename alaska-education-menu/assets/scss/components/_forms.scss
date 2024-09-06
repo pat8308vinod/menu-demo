@@ -1,0 +1,44 @@
+form {
+    label {
+        display: block;
+        h6 {
+            margin-bottom: rem-calc(14);
+        }
+    }
+}
+.assets {
+    form {
+        input[type='button'] {
+            @extend .btn;
+            @extend .btn-primary;
+            font-family: var(--body-font-family);
+            font-size: rem-calc(14) !important;
+            padding: rem-calc(8 32) !important;
+        }
+    }
+}
+
+// Custome Select styles
+.custom-select {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--ae-disabled);
+    position: relative;
+    margin-right: rem-calc(16);
+
+    &::after {
+        content: '\f078';
+        position: absolute;
+        right: rem-calc(8);
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--fa-style-family, "Font Awesome 6 Free");
+        font-weight: var(--fa-style, 900);
+        z-index: -1;
+    }
+    select {
+        appearance: none;
+        background: transparent;
+        padding: rem-calc(8 32 8 16);
+    }
+}

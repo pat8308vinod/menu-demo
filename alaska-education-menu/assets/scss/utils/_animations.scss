@@ -1,0 +1,11 @@
+:root {
+  --hover-duration: 0.3s;
+  --hover-easing: cubic-bezier(0.76, 0, 0.24, 1);
+  --hover-color-primary: #333333;
+  --hover-color-secondary: #ffffff;
+  --hover-border-width: 2px;
+
+  --link-initial: var(--casc-gray);
+  --link-hover: var(--casc-black);
+}
+// @import 'https://animations.exemplifi.io/dist/ex.min.css'
