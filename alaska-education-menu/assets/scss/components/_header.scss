@@ -395,7 +395,8 @@
                     color: var(--black);
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: end;
+                    flex: auto;
                     &:hover {
                       color: var(--ae-darker-blue);
                     }
